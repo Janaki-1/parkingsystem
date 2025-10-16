@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartPark | Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .auth-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f7fb;
+    }
+    .auth-box {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+    .auth-box h2 {
+      color: #0d6efd;
+      margin-bottom: 25px;
+    }
+    .auth-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .auth-box button {
+      background: #0d6efd;
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .auth-box button:hover {
+      background: #0b5ed7;
+    }
+    .auth-box p {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+    .auth-box a {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .auth-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>Login to SmartPark</h2>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don’t have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      if (email && password) {
+        alert("✅ Login successful! Welcome back to SmartPark 🚗");
+        window.location.href = "index.html";
+      } else {
+        alert("❌ Please enter valid credentials.");
+      }
+    });
+  </script>
+
+</body>
+</html>
